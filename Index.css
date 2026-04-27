@@ -1,0 +1,717 @@
+/* Fuente artística para títulos y nombre (Prata) */
+.artistic-font {
+    font-family: 'Prata', serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    font-size: 2.1em;
+    line-height: 1.08;
+    color: var(--primary-title, #e1b54e);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+h1.artistic-font, .section-title.artistic-font {
+    font-size: 2.4em;
+    margin-bottom: 0.4em;
+    color: var(--primary-title, #e1b54e);
+}
+
+@media (max-width: 600px) {
+    .artistic-font {
+        font-size: 1.2em;
+    }
+    h1.artistic-font, .section-title.artistic-font {
+        font-size: 1.4em;
+    }
+}
+/* ========================================
+   ESTILOS GENERALES - TEMAS CLARO Y OSCURO
+   ======================================== */
+
+/* Variables CSS para temas - Tema Oscuro (Default) */
+:root {
+    --bg-primary: #0f0c1f;
+    --bg-secondary: #15122e;
+    --bg-tertiary: #1c1840;
+    --text-primary: #f1eaff;
+    --text-secondary: #cfc3ff;
+    --text-muted: #9b8fcf;
+    --accent-primary: #7c3aed;
+    --accent-secondary: #a78bfa;
+    --accent-gold: #e9d5ff;
+    --accent-cosmic: #c084fc;
+    --border-color: rgba(167, 139, 250, 0.2);
+    --shadow-color: rgba(124, 58, 237, 0.25);
+    --hero-gradient-start: #0f0c29;
+    --hero-gradient-end: #302b63;
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #2c3e50;
+    --text-secondary: #495057;
+    --text-muted: #6c757d;
+    --accent-primary: #6b4c9a;
+    --accent-secondary: #8b5cf6;
+    --accent-gold: #d4af37;
+    --accent-cosmic: #7c3aed;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hero-gradient-start: #1a252f;
+    --hero-gradient-end: #2c3e50;
+}
+
+/* Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fondo con aura cósmica */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(124,58,237,0.15), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(167,139,250,0.1), transparent 40%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Hover mistico en imagenes */
+
+.gallery-grid figure:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+.gallery-grid img {
+    transition: all 0.4s ease;
+}
+
+/* Titulos mas artisticos*/
+
+.section-title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.site-header {
+    background: rgba(15, 12, 41, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .site-header {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--accent-secondary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--accent-primary);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Toggle tema */
+.theme-toggle {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Skip Link para accesibilidad */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 1001;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ========================================
+   HERO / PORTADA
+   ======================================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-3px);
+}
+
+.cta-button:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 3px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   SECCIONES GENERALES
+   ======================================== */
+.section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-primary);
+    margin: 1rem auto 0;
+}
+
+/* ========================================
+   SOBRE MÍ
+   ======================================== */
+.about-section {
+    background-color: var(--bg-primary);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   CARRUSEL DE OBRAS
+   ======================================== */
+.gallery-section {
+    margin-top: 2rem;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    visibility: hidden;
+}
+
+.carousel-slide.current-slide {
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+}
+
+.carousel-slide figure {
+    margin: 0;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-slide figcaption {
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    background: var(--bg-secondary);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(124, 58, 237, 0.8);
+    border: none;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.current-slide {
+    background: var(--accent-primary);
+    transform: scale(1.3);
+}
+
+.carousel-indicator:hover {
+    background: var(--accent-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-slide img {
+        height: 280px;
+    }
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   TRAYECTORIA
+   ======================================== */
+.timeline-section {
+    background-color: var(--bg-secondary);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-left: 4px solid var(--accent-primary);
+}
+
+.timeline-item h3 {
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item .year {
+    font-weight: bold;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.timeline-item p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   PRÓXIMAS PRESENTACIONES
+   ======================================== */
+.events-section {
+    background-color: var(--bg-primary);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--bg-primary);
+}
+
+.event-card:hover,
+.event-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.event-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.event-card .date {
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.event-card .location {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.event-card p {
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.site-footer {
+    background-color: var(--text-primary);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.site-footer p {
+    opacity: 0.7;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Botones de contacto */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.contact-btn:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 3px;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   UTILIDADES DE ACCESIBILIDAD
+   ======================================== */
+
+/* Visualmente oculto pero accesible para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visible para navegación por teclado */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================
+   DISEÑO RESPONSIVO
+   ======================================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .main-nav {
+        padding: 1rem;
+    }
+}
+
+/* Menú móvil */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 10px var(--shadow-color);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-primary);
+    }
+}
+
+/* ========================================
+   MEJORAS DE RENDIMIENTO
+   ======================================== */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
