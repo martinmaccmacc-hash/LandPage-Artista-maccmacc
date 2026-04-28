@@ -45,22 +45,22 @@ h1.artistic-font, .section-title.artistic-font {
     --hero-gradient-end: #302b63;
 }
 
-/* Tema Claro */
+/* Tema Claro - Tonos Violeta/Lila suave */
 [data-theme="light"] {
-    --bg-primary: #f8f9fa;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #e9ecef;
-    --text-primary: #2c3e50;
-    --text-secondary: #495057;
-    --text-muted: #6c757d;
-    --accent-primary: #6b4c9a;
-    --accent-secondary: #8b5cf6;
-    --accent-gold: #d4af37;
-    --accent-cosmic: #7c3aed;
-    --border-color: #dee2e6;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --hero-gradient-start: #1a252f;
-    --hero-gradient-end: #2c3e50;
+    --bg-primary: #f3f0f7;
+    --bg-secondary: #ebe6f2;
+    --bg-tertiary: #ddd5e8;
+    --text-primary: #2d1f3d;
+    --text-secondary: #4a3a5c;
+    --text-muted: #6b5a7a;
+    --accent-primary: #7c3aed;
+    --accent-secondary: #9b7ed9;
+    --accent-gold: #8b6fc9;
+    --accent-cosmic: #8b5cf6;
+    --border-color: #c9c0d9;
+    --shadow-color: rgba(124, 58, 237, 0.12);
+    --hero-gradient-start: #e8e0f5;
+    --hero-gradient-end: #d4c8ed;
 }
 
 /* Reset y Base */
@@ -130,7 +130,7 @@ body::before {
 }
 
 [data-theme="light"] .site-header {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(243, 240, 247, 0.92);
 }
 
 .main-nav {
@@ -244,6 +244,7 @@ body::before {
 }
 
 .hero-description {
+    color: var(--text-secondary);
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
@@ -550,7 +551,7 @@ body::before {
    FOOTER
    ======================================== */
 .site-footer {
-    background-color: var(--text-primary);
+    background-color: #7c3aed5d;
     color: white;
     text-align: center;
     padding: 2rem;
@@ -613,6 +614,122 @@ body::before {
 
 .btn-icon {
     font-size: 1.2rem;
+}
+
+/* ========================================
+   SERVICIOS
+   ======================================== */
+.services-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    border-color: var(--accent-primary);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   FAQ
+   ======================================== */
+.faq-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.faq-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.faq-item h3 {
+    color: var(--accent-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   LISTA DE TÉCNICAS (Sobre mí)
+   ======================================== */
+.tech-list {
+    list-style: none;
+    padding: 0.5rem 0 1rem 1.5rem;
+}
+
+.tech-list li {
+    position: relative;
+    padding: 0.4rem 0;
+    color: var(--text-secondary);
+}
+
+.tech-list li::before {
+    content: "🎨";
+    position: absolute;
+    left: -1.5rem;
+    font-size: 0.9rem;
+}
+
+.tech-list strong {
+    color: var(--accent-primary);
 }
 
 /* ========================================
