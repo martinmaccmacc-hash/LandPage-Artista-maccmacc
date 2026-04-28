@@ -1,6 +1,6 @@
 # Website Artista - Práctica UTEC
 
-Este es mi primer proyecto del curso Full Stack en UTEC. Consiste en una página web estática para presentar el portafolio de un artista, enfocándose en el manejo de diseño visual y estructura de archivos.
+Este es mi primer proyecto del curso Full Stack en UTEC. Consiste en una página web estática(Landing Page) para presentar el portafolio de un artista, enfocándose en el manejo de diseño visual y estructura de archivos.
 
 ## 🚀 Tecnologías utilizadas
 * HTML5
