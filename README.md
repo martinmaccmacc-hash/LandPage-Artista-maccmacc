@@ -5,7 +5,6 @@ Este es mi primer proyecto del curso Full Stack en UTEC. Consiste en una página
 ## 🚀 Tecnologías utilizadas
 * HTML5
 * CSS3 (Flexbox/Grid)
-* JSS
 * Git & GitHub
 
 ## 🖼️ Vista previa
